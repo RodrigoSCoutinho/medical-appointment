@@ -1,10 +1,11 @@
 import express from 'express'
+import { userRouter } from './routes/user.routes';
 
 const app = express();
 
-app.get("/", (request, response) => {
-   return response.send("OK")
-})
+app.use(express.json());
+
+app.use(userRouter)
 
 app.listen(3000, () => {
     console.log("server is running")

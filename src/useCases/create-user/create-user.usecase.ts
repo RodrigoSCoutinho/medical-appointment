@@ -12,7 +12,7 @@ export class CreateUserUseCase {
       const userRepository = new UserRepository()
       const user = User.create(data)
     
-      if (!data.username && !data.password) {
+      if (!data.username || !data.password) {
          throw new Error("Username/password is required");
       }
 
