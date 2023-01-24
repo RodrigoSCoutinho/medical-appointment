@@ -9,7 +9,7 @@ type UserRequest = {
 
 export class CreateUserUseCase {
     async execute(data: UserRequest){
-      const userRepository = new UserRepository()
+      const userRepository = UserRepository.getInstance();
       const user = User.create(data)
     
       if (!data.username || !data.password) {
