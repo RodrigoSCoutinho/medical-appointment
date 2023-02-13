@@ -1,15 +1,24 @@
-## Agendamento de consulta medica
+## Medical appointment scheduling
 
 ---
 
-### **Funcionalidades**
+### **Functionalities**
 
 ---
 
-### **Cadastro de Usuarios**
+### **User registration**
 
-- **[  ]** Deve ser possivel um usuario realizar um cadastro.
-- **[ x ]** O usuario nao precisa estar autenticado no sistema para se cadastrar.
-- **[ x ]** Nao deve ser possivel realizar o cadastro de um usuario sem username e senha.
-- **[ x ]** Nao deve ser possivel realizar o cadastro de um username ja existente.
-- **[ x ]** Nao deve ser possivel o usuario cadastrar a permissao de administrador.
+- **[ x ]** It must be possible for a user to register.
+- **[ x ]** The user does not need to be authenticated in the system to register.
+- **[ x ]** It should not be possible to register a user without username and password.
+- **[ x ]** It should not be possible to register an existing username.
+- **[ x ]** It should not be possible for the user to register administrator permissions.
+
+
+### **Specialty Registration**
+
+- **[  ]** It must be possible for a user to register a specialty.
+- **[  ]** The user needs to be authenticated in the application.
+- **[  ]** It should not be possible to register an existing specialty, that is, with the same name.
+- **[  ]** The user must have administrator permissions.
+- **[  ]** It should not be possible to register a specialty with an empty name.
