@@ -1,8 +1,8 @@
-import { CustomError } from "../../../errors/custom.error";
-import { ParameterRequiredError } from "../../../errors/parameter-required.error";
-import { IPasswordCrypto } from "../../../infra/shared/crypto/password.crypto";
-import { User } from "../../users/entities/user.entity";
-import { IUserRepository } from "../../users/repositories/user.repository";
+import { CustomError } from "../../../../errors/custom.error";
+import { ParameterRequiredError } from "../../../../errors/parameter-required.error";
+import { IPasswordCrypto } from "../../../../infra/shared/crypto/password.crypto";
+import { User } from "../../entities/user.entity";
+import { IUserRepository } from "../../repositories/user.repository";
 
 
 type UserRequest = {

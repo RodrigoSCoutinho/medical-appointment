@@ -1,5 +1,5 @@
-import { PasswordBcrypt } from "../../../infra/shared/crypto/password.bcrypt";
-import { UserPrismaRepository } from "../../users/repositories/implementations/user.prisma.repository";
+import { PasswordBcrypt } from "../../../../infra/shared/crypto/password.bcrypt";
+import { UserPrismaRepository } from "../../repositories/implementations/user.prisma.repository";
 import { CreateUserController } from "./create-user.controller";
 
 const userPrismaRepository = new UserPrismaRepository();
