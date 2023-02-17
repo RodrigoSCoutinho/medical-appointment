@@ -1,12 +1,12 @@
-import { Speciality } from "../entities/speciality.entity"
-import { ISpecialityRepository } from "../repositories/speciality.repository"
+import { Speciality } from "../../entities/speciality.entity"
+import { ISpecialityRepository } from "../../repositories/speciality.repository"
 
 type SpecialityRequest = {
     name: string,
     description: string,
 }
 
-export class CreateSpeciality {
+export class CreateSpecialityUseCase {
     constructor(private specialityRepository: ISpecialityRepository){}
 
     async execute(data: SpecialityRequest){
