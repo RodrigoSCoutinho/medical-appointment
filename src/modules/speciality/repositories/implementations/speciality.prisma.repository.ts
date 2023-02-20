@@ -1,7 +1,7 @@
 import { Speciality } from "../../entities/speciality.entity";
 import { ISpecialityRepository } from "../speciality.repository";
 
-export class SpecialityRepository implements ISpecialityRepository {
+export class SpecialityPrismaRepository implements ISpecialityRepository {
     async save(data: Speciality): Promise<Speciality> {
         throw new Error("Method not implemented.");
 

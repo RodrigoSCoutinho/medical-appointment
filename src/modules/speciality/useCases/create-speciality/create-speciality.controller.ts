@@ -7,6 +7,19 @@ export class CreateSpecialityController {
     constructor(private specialityRepository: ISpecialityRepository){}
 
     async handle(request: Request, response: Response){
-      const useCase = new CreateSpecialityUseCase(this.specialityRepository)
+      try {
+         const useCase = new CreateSpecialityUseCase(this.specialityRepository);
+
+         const result = await useCase.execute(request.body)
+         return response.json(result)
+
+      } catch (err: any) {
+       
+          return response.status(err.statusCode || 400).json({
+       
+          error: err.message
+
+        })
+      }
     }
 }
