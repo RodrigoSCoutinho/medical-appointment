@@ -4,5 +4,39 @@
         "title": "Service of schedule appointment",
         "description": "That API is has been designed to scheduling appointment",
         "version": "1.0.0"
+    },
+    "paths": {
+        "/specialities": {
+            "post": {
+                "description": "Cadastro de especialidade",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                               "$ref": "#/components/schemas/SpecialityRequest"
+                            }
+                       }
+                    }
+                 }
+              }
+           }
+        },
+        "components": {
+            "schemas": {
+               "SpecialityRequest": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Nome da especialidade"
+                     },
+                     "description": {
+                        "type": "string",
+                        "description": "Descricao da especialidade"
+                     }
+                  },
+                  "required": ["name", "description"]
+               }
+            }
+        }
     }
-}
