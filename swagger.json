@@ -1,0 +1,8 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Service of schedule appointment",
+        "description": "That API is has been designed to scheduling appointment",
+        "version": "1.0.0"
+    }
+}
