@@ -10,11 +10,18 @@ export class JWTToken implements IToken {
 
     private TOKEN_SECRET_CRYPTO = createHmac('sha256', this.TOKEN_SECRET).digest('base64')
 
-    create(user: User): string {
-     const token = sign({ user }, this.TOKEN_SECRET_CRYPTO, {
-        subject: user._id,
+    create({ username, _isAdmin, _id}: User): string {
+     const token = sign(
+    { 
+       user: { 
+        username,
+        _isAdmin,
+        _id
+       }
+    }, this.TOKEN_SECRET_CRYPTO, {
+        subject: _id,
         expiresIn: '1m',
-     })
+       })
 
      return token
     }
