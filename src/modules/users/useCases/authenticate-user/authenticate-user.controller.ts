@@ -2,18 +2,24 @@ import { Request, Response } from "express";
 import { IPasswordCrypto } from './../../../../infra/shared/crypto/password.crypto';
 import { IUserRepository } from '../../repositories/user.repository';
 import { AuthenticateUserUseCase } from "./authenticate-user.usecase";
+import { IToken } from "../../../../infra/shared/token/token";
 
 export class AuthenticateUserController {
    constructor(
       private userRepository: IUserRepository,
-      private passwordCrypt: IPasswordCrypto
+      private passwordCrypt: IPasswordCrypto,
+      private token: IToken
    ){}
 
    async handle(request: Request, response: Response) {
      try {
        const data = request.body;
 
-       const authenticateUserUseCase = new AuthenticateUserUseCase(this.userRepository, this.passwordCrypt);
+       const authenticateUserUseCase = new AuthenticateUserUseCase(
+         this.userRepository, 
+         this.passwordCrypt, 
+         this.token
+         );
 
        const result = await authenticateUserUseCase.execute(data)
 
