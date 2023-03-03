@@ -7,13 +7,17 @@ export const ensureAuthenticate = (request: Request, response: Response, next: N
     const headerAuth = request.headers.authorization
 
     if(!headerAuth) {
-        throw new CustomError("Token is missing", 401);
-    }
+        return response.status(401).json({
+            error: "Token is missing"
+      });
+     }
 
     const [, token] = headerAuth.split(" ");
 
     if(!token) {
-        throw new CustomError("Token is missing", 401);
+       return response.status(401).json({
+        error: "Token is missing"
+     });
     }
 
     const verifyToken = new JWTToken().validate(token);
