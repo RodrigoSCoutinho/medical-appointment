@@ -26,7 +26,7 @@ export class JWTToken implements IToken {
             return token
         }
 
-        validate(token: string): boolean {
+    validate(token: string): boolean {
             try {
                 verify(token, this.TOKEN_SECRET_CRYPTO)
                 return true

@@ -31,6 +31,29 @@
                     }
                  }
               }
+           },
+           "/logins": {
+             "post": {
+                "description": "User Authenticate",
+                "tags": ["users"],
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200": {
+                        "description": "Token gerado"
+                    },
+                    "401": {
+                        "description": "Error message"
+                    }
+                }
+             }
            }
         },
         "components": {
@@ -74,6 +97,21 @@
                     "description": "Data de criacao da especialidade",
                     "format": "date-time"
                    }
+                  }
+               },
+               "LoginRequest": {
+                 "type": "object",
+                 "properties": {
+                   "username": {
+                      "type": "string",
+                      "description": "username de login",
+                      "example": "username_test"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "password de login",
+                        "example": "password_test"
+                    }
                   }
                }
             }
