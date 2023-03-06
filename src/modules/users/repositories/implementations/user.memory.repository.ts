@@ -10,21 +10,25 @@ export class UserMemoryRepository implements IUserRepository{
     constructor(){
       this.users = []
     }
-
+    
     static getInstance(){
       if(!UserMemoryRepository.instance){
         UserMemoryRepository.instance = new UserMemoryRepository();
       }
-
-        return UserMemoryRepository.instance;
+      
+      return UserMemoryRepository.instance;
     }
-
+    
     async findByUsername(username: string){
       return this.users.find((user) => user.username === username)
     }
-
+    
     async save(data: User){
-        this.users.push(data);
-        return data;
+      this.users.push(data);
+      return data;
     }
-}
+  
+    async findById(id: string): Promise<User | null> {
+      return this.users.find((user) => user._id === id) || null
+    }
+  }

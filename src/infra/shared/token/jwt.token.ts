@@ -2,7 +2,7 @@ import { sign, verify } from "jsonwebtoken"
 import { createHmac } from "crypto"
 
 import { User } from "../../../modules/users/entities/user.entity";
-import { IToken } from "./token";
+import { IToken, TokenUser } from "./token";
 
 export class JWTToken implements IToken {
     
@@ -20,19 +20,19 @@ export class JWTToken implements IToken {
                 }
             }, this.TOKEN_SECRET_CRYPTO, {
                 subject: _id,
-                expiresIn: '10s',
+                expiresIn: '40s',
             })
             
             return token
         }
 
-    validate(token: string): boolean {
+    validate(token: string): TokenUser | null {
             try {
-                verify(token, this.TOKEN_SECRET_CRYPTO)
-                return true
+        
+              return verify(token, this.TOKEN_SECRET_CRYPTO) as TokenUser  
             
             } catch (err) {
-                return false
+              return null;
             }
         }
         

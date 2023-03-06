@@ -18,7 +18,7 @@
 ### **Specialty Registration**
 
 - **[  ]** It must be possible for a user to register a specialty.
-- **[  ]** The user needs to be authenticated in the application.
-- **[  ]** It should not be possible to register an existing specialty, that is, with the same name.
-- **[  ]** The user must have administrator permissions.
-- **[  ]** It should not be possible to register a specialty with an empty name.
+- **[ x ]** The user needs to be authenticated in the application.
+- **[ x ]** It should not be possible to register an existing specialty, that is, with the same name.
+- **[ x ]** The user must have administrator permissions.
+- **[ x ]** It should not be possible to register a specialty with an empty name.

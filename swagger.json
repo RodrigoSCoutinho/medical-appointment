@@ -9,6 +9,11 @@
         "/specialities": {
             "post": {
                 "tags": ["Speciality"],
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
                 "description": "Cadastro de especialidade",
                 "requestBody": {
                     "content": {
@@ -114,6 +119,15 @@
                     }
                   }
                }
+            },
+            "securitySchemes": {
+                "bearerAuth": {
+                    "description": "Authenticate from API",
+                    "type": "http",
+                    "scheme": "bearer",
+                    "bearerFormats": "JWT",
+                    "tokenUrl": "https://localhost:3000/login"
+                }
             }
         }
     }

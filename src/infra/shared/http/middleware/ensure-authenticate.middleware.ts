@@ -6,6 +6,8 @@ import { JWTToken } from '../../token/jwt.token';
 export const ensureAuthenticate = (request: Request, response: Response, next: NextFunction) => {
     const headerAuth = request.headers.authorization
 
+    //!we got token inside headers.authorization
+
     if(!headerAuth) {
         return response.status(401).json({
             error: "Token is missing"
@@ -23,6 +25,7 @@ export const ensureAuthenticate = (request: Request, response: Response, next: N
     const verifyToken = new JWTToken().validate(token);
 
     if(verifyToken){
+      request.userId = verifyToken.sub;
       return next();
     }
 
