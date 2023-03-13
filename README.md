@@ -30,3 +30,4 @@
 - **[  ]** O medico deve estar atrelado a um usuario.
 - **[  ]** O medico deve ter uma e somente uma especialidade.
 - **[  ]** Nao deve ser possivel cadastrar um medico sem crm.
+- **[  ]** Nao deve ser possivel cadastrar o mesmo CRM mais de uma vez.
