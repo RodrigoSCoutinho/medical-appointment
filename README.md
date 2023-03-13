@@ -26,8 +26,8 @@
 ### **Doctor's Registration**
 
 - **[  ]** It must be possible register a doctor.
-- **[  ]** O medico deve possuir um crm com 6 digitos.
-- **[  ]** O medico deve estar atrelado a um usuario.
-- **[  ]** O medico deve ter uma e somente uma especialidade.
-- **[  ]** Nao deve ser possivel cadastrar um medico sem crm.
-- **[  ]** Nao deve ser possivel cadastrar o mesmo CRM mais de uma vez.
+- **[ x ]** The doctor must have a CRM with 6 digits.
+- **[ x ]** The doctor must be linked to a user.
+- **[  ]** The doctor must have one and only one specialty.
+- **[ x ]** It should not be possible to register a doctor without a CRM.
+- **[ x ]** It should not be possible to register the same CRM more than once.

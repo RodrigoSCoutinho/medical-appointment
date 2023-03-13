@@ -5,7 +5,7 @@ import { DoctorMemoryRepository } from '../../../repositories/implementations/do
 import { CreateDoctorRequest, CreateDoctorUseCase } from '../create-doctor.usecase';
 
 describe("Create Doctor UseCase", () => {
-    test('should be able to create a new Doctor', async () => {
+    test('Should be able to create a new Doctor', async () => {
       const doctorMock: CreateDoctorRequest = {
         username: 'username_test',
         name: 'name_test',
@@ -27,7 +27,7 @@ describe("Create Doctor UseCase", () => {
       expect(doctorCreated).toHaveProperty("id")
     })
 
-    test('should not be able to create a new Doctor with exists CRM', async () => {
+    test('Should not be able to create a new Doctor with exists CRM', async () => {
       const doctorMock: CreateDoctorRequest = {
         username: 'username_test',
         name: 'name_test',
@@ -36,13 +36,38 @@ describe("Create Doctor UseCase", () => {
         crm: '123456',
         specialityId: randomUUID(),
       }
-
       const doctorMockDuplicated: CreateDoctorRequest = {
         username: 'username_duplicated',
         name: 'name_duplicated',
         password: 'password_duplicated',
-        email: 'zezinho.email@gmail.com',
+        email: 'email@duplicatedgmail.com',
         crm: '123456',
+        specialityId: randomUUID(),
+      }
+
+      const userRepository = new UserMemoryRepository();
+      const doctorRepository = new DoctorMemoryRepository();
+
+      const createDoctorUseCase = new CreateDoctorUseCase(
+        userRepository, 
+        doctorRepository
+        );
+
+     await createDoctorUseCase.execute(doctorMock);
+
+     expect( async ()=> {
+         await createDoctorUseCase.execute(doctorMockDuplicated);
+      }).rejects.toThrow('CRM already exists')
+    })
+
+    
+    test('Should not be able to create a new Doctor with exists CRM length invalid', async () => {
+      const doctorMock: CreateDoctorRequest = {
+        username: 'username_test',
+        name: 'name_test',
+        password: 'password_test',
+        email: 'email@gmail.com',
+        crm: '12345',
         specialityId: randomUUID(),
       }
 
@@ -53,10 +78,8 @@ describe("Create Doctor UseCase", () => {
         userRepository, 
         doctorRepository);
 
-        await createDoctorUseCase.execute(doctorMock);
-        
         expect(async () => {
-        await createDoctorUseCase.execute(doctorMockDuplicated);
-      }).rejects.toThrowError();
-    })
+        await createDoctorUseCase.execute(doctorMock);
+      }).rejects.toThrow('CRM length is incorrect!');
+   })
 })
