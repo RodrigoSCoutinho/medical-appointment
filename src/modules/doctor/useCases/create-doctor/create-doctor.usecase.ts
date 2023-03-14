@@ -1,4 +1,5 @@
 import { CustomError } from "../../../../errors/custom.error"
+import { ISpecialityRepository } from "../../../speciality/repositories/speciality.repository"
 import { User } from "../../../users/entities/user.entity"
 import { IUserRepository } from "../../../users/repositories/user.repository"
 import { Doctor } from "../../entities/doctor.entity"
@@ -16,7 +17,10 @@ export type CreateDoctorRequest = {
 
 export class CreateDoctorUseCase {
 
-    constructor(private userRepository: IUserRepository, private doctorRepository: IDoctorRepository){}
+    constructor(
+        private userRepository: IUserRepository, 
+        private doctorRepository: IDoctorRepository, 
+        private specialityRepository: ISpecialityRepository){}
 
     async execute(data: CreateDoctorRequest){
 
