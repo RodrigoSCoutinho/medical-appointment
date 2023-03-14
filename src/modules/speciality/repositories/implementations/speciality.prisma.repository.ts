@@ -9,7 +9,7 @@ export class SpecialityPrismaRepository implements ISpecialityRepository {
             //     data:{
                 //         name: data.name,
                 //         description: data.description,
-                //         id: data.id
+                //         id: data._id
                 //     }
                 // })
                 
@@ -18,11 +18,21 @@ export class SpecialityPrismaRepository implements ISpecialityRepository {
             
             async findByName(name: string): Promise<Speciality | null> {
                 throw new Error("Method not implemented.");
-
+                
                 // return await prismaClient.speciality.findUnique({
-                //     where: {
-                //        name,
+                    //     where: {
+                        //        name,
                 //     },
                 // })
             }
-}
+
+            async findById(_id: string): Promise<Speciality | null> {
+                throw new Error("Method not implemented.");
+
+                // return await prismaClient.speciality.findUnique({
+                    //     where: {
+                        //        _id,
+                //     },
+                // })
+            }
+        }

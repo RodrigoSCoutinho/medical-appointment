@@ -1,3 +1,4 @@
+import { SpecialityMemoryRepository } from './../../../../speciality/repositories/implementations/speciality.memory.repository';
 import { randomUUID } from 'crypto';
 import { describe, expect, test } from "vitest";
 import { UserMemoryRepository } from '../../../../users/repositories/implementations/user.memory.repository';
@@ -17,10 +18,13 @@ describe("Create Doctor UseCase", () => {
 
       const userRepository = new UserMemoryRepository();
       const doctorRepository = new DoctorMemoryRepository();
+      const specialityRepository = new SpecialityMemoryRepository();
 
       const createDoctorUseCase = new CreateDoctorUseCase(
         userRepository, 
-        doctorRepository);
+        doctorRepository,
+        specialityRepository
+        );
 
       const doctorCreated = await createDoctorUseCase.execute(doctorMock);
 
@@ -47,10 +51,12 @@ describe("Create Doctor UseCase", () => {
 
       const userRepository = new UserMemoryRepository();
       const doctorRepository = new DoctorMemoryRepository();
+      const specialityRepository = new SpecialityMemoryRepository();
 
       const createDoctorUseCase = new CreateDoctorUseCase(
         userRepository, 
-        doctorRepository
+        doctorRepository,
+        specialityRepository
         );
 
      await createDoctorUseCase.execute(doctorMock);
@@ -73,10 +79,12 @@ describe("Create Doctor UseCase", () => {
 
       const userRepository = new UserMemoryRepository();
       const doctorRepository = new DoctorMemoryRepository();
+      const specialityRepository = new SpecialityMemoryRepository();
 
       const createDoctorUseCase = new CreateDoctorUseCase(
         userRepository, 
-        doctorRepository);
+        doctorRepository,
+        specialityRepository);
 
         expect(async () => {
         await createDoctorUseCase.execute(doctorMock);

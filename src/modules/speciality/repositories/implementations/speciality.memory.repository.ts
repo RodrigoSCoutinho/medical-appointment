@@ -1,14 +1,18 @@
 import { Speciality } from '../../entities/speciality.entity';
 import { ISpecialityRepository } from './../speciality.repository';
 export class SpecialityMemoryRepository implements ISpecialityRepository{
-    save(data: Speciality): Promise<Speciality> {
-        throw new Error('Method not implemented.');
+    
+    items: Speciality[] = []
+    
+    async save(data: Speciality): Promise<Speciality> {
+        this.items.push(data)
+        return data;
     }
-    findByName(name: string): Promise<Speciality | null> {
-        throw new Error('Method not implemented.');
+    async findByName(name: string): Promise<Speciality | null> {
+        return this.items.find(speciality => speciality.name === name) || null;
     }
-    findById(_id: string): Promise<Speciality | null> {
-        throw new Error('Method not implemented.');
+    async findById(_id: string): Promise<Speciality | null> {
+        return this.items.find(speciality => speciality.id === _id) || null;
     }
 
 }
