@@ -35,6 +35,8 @@ describe("Create Doctor UseCase", () => {
         specialityId: speciality.id
       }
 
+      console.log({ doctorMock})
+
       const createDoctorUseCase = new CreateDoctorUseCase(
         userRepository, 
         doctorRepository,

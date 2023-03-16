@@ -25,9 +25,9 @@
 
 ### **Doctor's Registration**
 
-- **[  ]** It must be possible register a doctor.
+- **[ x ]** It must be possible register a doctor.
 - **[ x ]** The doctor must have a CRM with 6 digits.
 - **[ x ]** The doctor must be linked to a user.
-- **[  ]** The doctor must have one and only one specialty.
+- **[ x ]** The doctor must have one and only one specialty.
 - **[ x ]** It should not be possible to register a doctor without a CRM.
 - **[ x ]** It should not be possible to register the same CRM more than once.
