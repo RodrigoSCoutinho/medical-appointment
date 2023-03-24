@@ -29,7 +29,7 @@ export class User {
       this._isAdmin = false;
     }
 
-    static async create(props: IUser){
+    static async create(props : IUser){
         if (!props.password) {
             throw new ParameterRequiredError('Username/password is required', 422);
         }

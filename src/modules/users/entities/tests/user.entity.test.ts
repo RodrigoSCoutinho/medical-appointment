@@ -9,7 +9,7 @@ describe("User entity", () => {
          username: "USERNAME_TEST"
        })
 
-       console.log({user})
+    //    console.log({user})
 
        expect(user).toBeInstanceOf(User)
        expect(user).toHaveProperty('_id')

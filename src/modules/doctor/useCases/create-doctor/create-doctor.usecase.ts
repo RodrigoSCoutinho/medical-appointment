@@ -30,8 +30,7 @@ export class CreateDoctorUseCase {
            username: data.username
         })
 
-        const speciality = await this.specialityRepository.findById(
-            data.specialityId)
+        const speciality = await this.specialityRepository.findById(data.specialityId)
 
         if(!speciality){
             throw new CustomError("Speciality does not exists!", 400)
