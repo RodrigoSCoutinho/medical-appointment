@@ -31,3 +31,5 @@
 - **[ x ]** The doctor must have one and only one specialty.
 - **[ x ]** It should not be possible to register a doctor without a CRM.
 - **[ x ]** It should not be possible to register the same CRM more than once.
+
+### **Physician Information Registration**
