@@ -33,3 +33,10 @@
 - **[ x ]** It should not be possible to register the same CRM more than once.
 
 ### **Physician Information Registration**
+
+- **[ x ]** Deve ser possivel cadastrar a informacao de um medico.
+- **[ x ]** O medico ele deve estar cadastrado.
+- **[ x ]** O medico deve estar autenticado na aplicacao.
+- **[ x ]** Nao deve ser possivel ter mais de um registro de informacao por medico.
+- **[ x ]** O horario de termino nao deve ser menor que o horario de inicio de atendimento.
+- **[ x ]** A duracao da consulta nao pode ser menor ou igual a zero.
