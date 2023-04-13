@@ -34,9 +34,9 @@
 
 ### **Physician Information Registration**
 
-- **[ x ]** Deve ser possivel cadastrar a informacao de um medico.
-- **[ x ]** O medico ele deve estar cadastrado.
-- **[ x ]** O medico deve estar autenticado na aplicacao.
-- **[ x ]** Nao deve ser possivel ter mais de um registro de informacao por medico.
-- **[ x ]** O horario de termino nao deve ser menor que o horario de inicio de atendimento.
-- **[ x ]** A duracao da consulta nao pode ser menor ou igual a zero.
+- **[  ]** It must be possible to register the information of a doctor.
+- **[ x ]** The doctor must be registered.
+- **[  ]** The doctor must be authenticated in the application. (ROUTES)
+- **[  ]** It should not be possible to have more than one record of information per physician.
+- **[  ]** The end time must not be less than the start time.
+- **[  ]** The query duration cannot be less than or equal to zero.
