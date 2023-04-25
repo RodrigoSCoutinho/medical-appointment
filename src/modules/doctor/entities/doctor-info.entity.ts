@@ -1,5 +1,6 @@
 import { randomUUID } from 'crypto';
 import { CustomError } from '../../../errors/custom.error';
+import { compareEndTimeIsAfter, validateTime } from '../../../utils/date';
 
 export type DoctorInfoProps = {
     duration: number;
@@ -27,6 +28,18 @@ export class DoctorInfo {
 
         if(props.duration <= 0){
             throw new CustomError('Invalid duration!');
+        }
+
+        if (!validateTime(props.startAt)) {
+            throw new CustomError('Invalid StartAt!');
+        }
+
+        if (!validateTime((props.endAt))) {
+            throw new CustomError('Invalid EndAt!');
+        }
+
+        if (!compareEndTimeIsAfter(props.startAt, props.endAt)) {
+            throw new CustomError('End time cannot be earlier than start time!');
         }
 
         this.id = randomUUID();
