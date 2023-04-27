@@ -34,9 +34,9 @@
 
 ### **Physician Information Registration**
 
-- **[  ]** It must be possible to register the information of a doctor.
+- **[ x ]** It must be possible to register the information of a doctor.
 - **[ x ]** The doctor must be registered.
-- **[  ]** The doctor must be authenticated in the application. (ROUTES)
-- **[  ]** It should not be possible to have more than one record of information per physician.
-- **[  ]** The end time must not be less than the start time.
-- **[  ]** The query duration cannot be less than or equal to zero.
+- **[ x ]** The doctor must be authenticated in the application. (ROUTES)
+- **[ x ]** It should not be possible to have more than one record of information per physician.
+- **[ x ]** The end time must not be less than the start time.
+- **[ x ]** The query duration cannot be less than or equal to zero.
