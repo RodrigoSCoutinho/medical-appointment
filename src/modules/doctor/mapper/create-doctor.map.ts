@@ -1,4 +1,4 @@
-// import { Doctor as DoctorPrisma} from '@prisma/client';
+import { Doctor as DoctorPrisma} from '@prisma/client';
 import { Doctor } from '../entities/doctor.entity';
 
 export class DoctorMapper {

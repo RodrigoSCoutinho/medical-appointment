@@ -1,6 +1,6 @@
 import { describe, expect, test, beforeAll } from "vitest";
 import { UserMemoryRepository } from '../../../../users/repositories/implementations/user.memory.repository';
-import { DoctorMemoryRepository } from '../../../repositories/implementations/doctor-memory.repository';
+import { DoctorMemoryRepository } from '../../../repositories/implementations/in-memory/doctor-memory.repository';
 import { CreateDoctorRequest, CreateDoctorUseCase } from '../create-doctor.usecase';
 import { SpecialityMemoryRepository } from './../../../../speciality/repositories/implementations/speciality.memory.repository';
 import { Speciality } from '../../../../speciality/entities/speciality.entity';
