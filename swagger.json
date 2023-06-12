@@ -6,7 +6,7 @@
         "version": "1.0.0"
     },
     "paths": {
-        "/specialities": {
+           "/specialities": {
             "post": {
                 "tags": ["Speciality"],
                 "security": [
@@ -82,7 +82,35 @@
                     }
                 }
               }
-           }
+           },
+           "/doctor-info": {
+            "post": {
+               "description": "Cadastro de informação  do Medico",
+               "tags": ["doctor-info"],
+               "security": [
+                {
+                    "bearerAuth": []
+                }
+               ],
+               "requestBody":{
+                   "content": {
+                       "application/json":{
+                           "schema": {
+                               "$ref": "#/components/schemas/DoctorInfoRequest"
+                          }
+                       }
+                    }
+                 },
+                 "responses":{
+                   "200": {
+                       "description": "informações do medico criada com sucesso"
+                   },
+                   "400": {
+                       "description": "Erro de cadastro"
+                   }
+               }
+             }
+          }
         },
 
         "components": {
@@ -97,7 +125,7 @@
                      },
                      "description": {
                         "type": "string",
-                        "description": "Descricao da especialidade",
+                        "description": "Descrição da especialidade",
                         "example": "DESCRIPTION_TEST"
                      }
                   },
@@ -113,7 +141,7 @@
                    },
                    "description": {
                       "type": "string",
-                      "description": "Descricao da especialidade",
+                      "description": "Descrição da especialidade",
                       "example": "DESCRIPTION_TEST"
                    },
                    "id": {
@@ -123,7 +151,7 @@
                    },
                    "createdAt": {
                     "type": "string",
-                    "description": "Data de criacao da especialidade",
+                    "description": "Data de criação da especialidade",
                     "format": "date-time"
                    }
                   }
@@ -177,6 +205,32 @@
                         "description": "Especialidade do medico",
                         "format": "uuid"
                       }
+                  }
+               },
+               "DoctorInfoRequest": {
+                "type": "object",
+                "properties": {
+                  "startAt": {
+                     "type": "string",
+                     "description": "Horário de inicio de atendimento",
+                     "example": "10:00"
+                     },
+                  "endAt": {
+                        "type": "string",
+                        "description": "Horário de término de atendimento",
+                        "example": "17:00"
+                       
+                     },
+                  "duration": {
+                          "type": "number",
+                          "description": "Duração do atendimento em minutos",
+                          "example": "40"
+                     },
+                  "price": {
+                        "type": "number",
+                        "description": "Valor do atendimento",
+                        "example": "150"
+                     }
                   }
                }
             },

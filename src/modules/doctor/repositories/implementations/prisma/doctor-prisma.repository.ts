@@ -9,14 +9,30 @@ import { IDoctorRepository } from "../../doctor.repository";
 export class DoctorPrismaRepository implements IDoctorRepository{
     findById(id: string): Promise<Doctor | null> {
         throw new Error('Method not implemented.');
+
+         // const doctor = await primaClient.doctor.findUnique({
+        //     where: {
+        //         id,
+        //     },
+        // })
+        // if(doctor) return doctorMapper.prismaToEntityDoctor(doctor);
+        // return null
     }
     findByUserId(userId: string): Promise<Doctor | null> {
         throw new Error('Method not implemented.');
+
+         // const doctor = await primaClient.doctor.findUnique({
+        //     where: {
+        //         user_id: userID
+        //     },
+        // })
+        // if(doctor) return doctorMapper.prismaToEntityDoctor(doctor);
+        // return null
     }
     async save(data: Doctor): Promise<Doctor> {
         throw new Error("Method not implemented.");
 
-        // const doctor = await prismaClient.doctor.create({
+        // const doctor = await prismaClient.doctor.findUnique({
         //   data: {
         //     crm: data.crm,
         //     email: data.email,
@@ -33,9 +49,11 @@ export class DoctorPrismaRepository implements IDoctorRepository{
 
         // const doctor = await primaClient.doctor.findUnique({
         //     where: {
-        //         crm
-        //     }
+        //         crm,
+        //     },
         // })
+        // if(doctor) return doctorMapper.prismaToEntityDoctor(doctor);
+        // return null
     }
 
 }

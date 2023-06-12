@@ -1,9 +1,10 @@
+import { ensureAuthenticate } from './../infra/shared/http/middleware/ensure-authenticate.middleware';
 import { Router } from "express";
 import { createDoctorInfoController } from "../modules/doctor/useCases/create-doctor-info";
 
 const doctorInfoRouter = Router();
 
-doctorInfoRouter.post('/doctor-info', async (request, response) => {
+doctorInfoRouter.post('/doctor-info', ensureAuthenticate, async (request, response) => {
    await createDoctorInfoController.handle(request, response);
 })
 
