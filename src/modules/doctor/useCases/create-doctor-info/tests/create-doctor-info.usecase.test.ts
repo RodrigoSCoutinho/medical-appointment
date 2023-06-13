@@ -141,4 +141,39 @@ describe('Create doctor info',() => {
 
       expect(doctorCreated).toHaveProperty('id')
     })
+
+    test('Should be able to update a exist doctor doctor info', async () => {
+      const doctorRepository = new DoctorMemoryRepository()
+      const doctorInfoRepository = new DoctorInfoMemoryRepository()
+      const createDoctorInfoUseCase = new CreateDoctorInfoUseCase(
+        doctorRepository, 
+        doctorInfoRepository);
+      
+      const userId = randomUUID()
+
+      await doctorRepository.save({
+          crm: '123456',
+          email: 'doctor@test.com.br',
+          id: randomUUID(),
+          specialityId: randomUUID(),
+          userId
+      })
+
+      const doctorInfo: DoctorInfoRequest = {
+        endAt: '18:00',
+        startAt: '10:00',
+        price: 150,
+        duration: 10
+      }
+     
+      const doctorCreated = await createDoctorInfoUseCase.execute(doctorInfo, userId)
+      console.log({doctorCreated})
+    
+      const doctorUpdated = await createDoctorInfoUseCase.execute(doctorInfo, userId)
+      console.log({doctorUpdated})
+
+
+      expect(doctorCreated).toHaveProperty('id')
+      expect(doctorCreated.id).toBe(doctorUpdated.id)
+    })
 })
