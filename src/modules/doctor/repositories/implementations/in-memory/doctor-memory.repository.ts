@@ -2,6 +2,8 @@ import { Doctor } from "../../../entities/doctor.entity";
 import { IDoctorRepository } from "../../doctor.repository";
 
 export class DoctorMemoryRepository implements IDoctorRepository{
+    //Save doctor in memory system
+
     items: Doctor[] = [];
     
     async save(data: Doctor): Promise<Doctor> {
