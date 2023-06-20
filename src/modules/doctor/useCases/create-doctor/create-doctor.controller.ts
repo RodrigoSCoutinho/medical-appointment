@@ -1,4 +1,4 @@
-import { z } from "zod"
+
 
 import { IUserRepository } from './../../../users/repositories/user.repository';
 import { IDoctorRepository } from './../../repositories/doctor.repository';
@@ -15,14 +15,21 @@ export class CreateDoctorController {
         async handle(request: Request, response: Response){
         const { body } = request;
 
-        const doctorSchema = z.object({
-            username: z.string(),
-            name: z.string(),
-            email: z.string().email(),
-            password: z.string(),
-            crm: z.string().length(6),
-            specialityId: z.string().uuid()
-        })
+    //     const doctorSchema = z.object({
+    //         username: z.string(),
+    //         name: z.string(),
+    //         email: z.string().email(),
+    //         password: z.string(),
+    //         crm: z.string().length(6),
+    //         specialityId: z.string().uuid()
+    //     })
+
+    //    try {
+    //     const validate = doctorSchema.parse(body)
+    //     console.log({validate})
+    //    } catch (err) {
+    //     console.log({err})
+    //    }
 
         const createDoctorUseCase = new CreateDoctorUseCase(
             this.userRepository, 
