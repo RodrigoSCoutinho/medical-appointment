@@ -1,3 +1,5 @@
+import { z } from "zod"
+
 import { IUserRepository } from './../../../users/repositories/user.repository';
 import { IDoctorRepository } from './../../repositories/doctor.repository';
 import { ISpecialityRepository } from './../../../speciality/repositories/speciality.repository';
@@ -11,9 +13,16 @@ export class CreateDoctorController {
         private specialityRepository: ISpecialityRepository){}
     
         async handle(request: Request, response: Response){
-
-        
         const { body } = request;
+
+        const doctorSchema = z.object({
+            username: z.string(),
+            name: z.string(),
+            email: z.string().email(),
+            password: z.string(),
+            crm: z.string().length(6),
+            specialityId: z.string().uuid()
+        })
 
         const createDoctorUseCase = new CreateDoctorUseCase(
             this.userRepository, 

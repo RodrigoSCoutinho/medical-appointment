@@ -3,6 +3,8 @@ import { IDoctorRepository } from "../../repositories/doctor.repository";
 import { IDoctorInfoRepository } from "../../repositories/doctor-info.repository";
 import { CreateDoctorInfoUseCase } from "./create-doctor-info.usecase";
 
+
+
 export class CreateDoctorInfoController {
     constructor (
         private doctorRepository: IDoctorRepository, 
