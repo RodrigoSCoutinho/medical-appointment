@@ -8,9 +8,9 @@ Creating an API to manage patients and doctors while adhering to all necessary b
 ## Adopted Practices
 
 - SOLID
-- Uso de DTOs para a API
-- Injeção de Dependências
-- Auditoria sobre criação e atualização da entidade
+- Usage of DTOs for the API
+- Dependency Injection
+- Auditing on entity creation and update
 
 ## Technologies
 
