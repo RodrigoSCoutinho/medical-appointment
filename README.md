@@ -1,6 +1,27 @@
 ## Medical appointment scheduling
 
----
+<p>
+Creating an API to manage patients and doctors while adhering to all necessary business rules, along with the implementation of automated tests.
+</p>
+
+
+## Adopted Practices
+
+- SOLID
+- Uso de DTOs para a API
+- Injeção de Dependências
+- Auditoria sobre criação e atualização da entidade
+
+## Technologies
+
+- [Expresst]()
+- [Typescript]()
+- [Prisma]()
+- [Vitest]()
+- [Swagger]()
+- [Bycript]()
+- [JWT]()
+
 
 ### **Functionalities**
 
