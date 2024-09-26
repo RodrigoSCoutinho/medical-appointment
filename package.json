@@ -15,8 +15,9 @@
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
 		"dayjs": "^1.11.7",
-		"express": "^4.18.2",
+		"express": "^4.21.0",
 		"jsonwebtoken": "^9.0.0",
+		"medical-appointment": "file:",
 		"swagger-ui-express": "^4.6.1"
 	},
 	"devDependencies": {
